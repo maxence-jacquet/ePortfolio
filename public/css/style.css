@@ -1,0 +1,69 @@
+h1{
+    text-align: center;
+    margin-top: 50px;
+    font-size: 50px;
+}
+h5{
+    text-align: left;
+}
+
+/* Conteneur principal pour les cartes */
+.card-container {
+    display: flex;
+    justify-content: center; /* Centre les cartes horizontalement */
+    align-items: center; /* Centre verticalement si nécessaire */
+    gap: 70px; /* Augmente l'espacement entre les cartes */
+    margin-top: 100px;
+}
+
+/* Style des cartes */
+.flip-card {
+    background-color: transparent;
+    width: 400px; /* Largeur augmentée */
+    height: 300px; /* Hauteur augmentée */
+    perspective: 1000px;
+    cursor: pointer;
+}
+
+/* Partie interne des cartes */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+/* Faces des cartes */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; /* Coins arrondis plus prononcés */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Face avant */
+.flip-card-front {
+    background: linear-gradient(90deg, #fa7ed1,#8886fc);
+    color: white;
+    font-size: 24px; /* Texte plus grand */
+}
+
+/* Face arrière */
+.flip-card-back {
+    background: linear-gradient(270deg, #fa7ed1,#8886fc);
+    color: white;
+    font-size: 24px; /* Texte plus grand */
+    transform: rotateY(180deg);
+}
+
+/* Classe ajoutée au clic */
+.flip-card-inner.flipped {
+    transform: rotateY(180deg);
+}
