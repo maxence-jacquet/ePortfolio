@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}CV{% endblock %}
+{% block title %}Configurer les fonctions de base du réseau local{% endblock %}
 
 {% block body %}
 <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
@@ -15,8 +15,11 @@
       <ul class="navbar-nav me-auto">
 
         <li class="nav-item">
-          <a class="nav-link" href="/pour_en_savoir_plus">Pour en savoir plus</a>
+          <a class="nav-link" href="/pour_en_savoir_plus">Pour en savoir plus
+            <span class="visually-hidden">(current)</span>
+          </a>
         </li>
+
         <li class="nav-item">
           <a class="nav-link" href="/cv">CV</a>
         </li>
@@ -24,83 +27,55 @@
         <li class="nav-item">
           <a class="nav-link" href="/eportfolio">ePortfolio</a>
         </li>
-      </ul>
-    </div>
+
   </div>
 </nav>
 
-<h1>Curriculum Vitae (CV)</h1>
+<h1> Configurer les fonctions de base du réseau local </h1>
 
 <div class="card-container">
-  <!-- Section Formations -->
   <div class="flip-card">
+
     <div class="flip-card-inner">
       <div class="flip-card-front">
-        <h2>Formations</h2>
+        <h2>Preuves</h2>
       </div>
+
       <div class="flip-card-back">
         <ul>
-          <li><h4>BAC spécialité Mathématiques et Numériques et Sciences Informatiques</h4></li>
-          <li><h4>BUT Réseaux et Télécommunications</h4></li>
+        <li class="li_apprentissage">
+        <img src="{{ asset('uploads/dns.png') }}" alt:"dns" style="width: auto; height:300px">
+        </li>
+        <li class="li_apprentissage">
+        <h4>A l'aide de cisco packet tracer j'ai configuré des serveurs Web, DNS, DHCP, des switchs et des ordinateurs</h4>
+        </li>
         </ul>
       </div>
     </div>
+    
   </div>
 
-  <!-- Section Expériences Professionnelles -->
   <div class="flip-card">
+
     <div class="flip-card-inner">
+
       <div class="flip-card-front">
-        <h2>Expériences Professionnelles</h2>
+        <h2>Analyses réfléxives</h2>
       </div>
+
       <div class="flip-card-back">
         <ul>
-          <li><h4>Réserviste Marine Nationale Décembre 2024</h4></li>
-          <li><h4>Sauveteur aquatique Été 2024</h4></li>
+        <li class="li_apprentissage">
+        <h4>J'avais déjà des bases sur les réseaux locaux mais j'ai beaucoup plus apppris dans le détails le fonctionnement des différents services comme le DNS</h4>
+        </li>
         </ul>
       </div>
+
     </div>
+
   </div>
 
-  <!-- Section Compétences -->
-  <div class="flip-card">
-    <div class="flip-card-inner">
-      <div class="flip-card-front">
-        <h2>Compétences</h2>
-      </div>
-      <div class="flip-card-back">
-        <ul>
-          <li><h4>Anglais A2</h4></li>
-          <li><h4>Espagnol A2</h4></li>
-          <li><h4>Utilisation de Visual Studio Code</h4></li>
-          <li><h4>Utilisation de Cisco Packet Tracer</h4></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- Section Formulaire -->
-<br><br>
-<h2 style="text-align: center;">Formulaire et Téléchargement</h2>
-<div class="form-container">
-  <form class="formulaire">
-    <label for="nom"><h5>Nom</h5></label>
-    <input type="text" id="nom" name="nom" required>
-
-    <label for="prenom"><h5>Prénom</h5></label>
-    <input type="text" id="prenom" name="prenom" required>
-
-    <label for="email"><h5>Adresse e-mail</h5></label>
-    <input type="email" id="email" name="email" required>
-
-    <button type="submit" class="submit-btn"><a href="{{ path('download_pdf', { 'filename': 'cv.pdf' }) }}">Envoyer et Télécharger</a></button>
-  </form>
-</div>
-
-
-
-{% endblock %}
+  {% endblock %}
 
 {% block javascripts %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

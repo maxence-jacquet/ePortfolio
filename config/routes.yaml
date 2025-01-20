@@ -4,3 +4,8 @@ controllers:
         namespace: App\Controller
     type: attribute
 
+download_pdf:
+    path: /download-pdf/{filename}
+    controller: App\Controller\PortfolioController::downloadPdf
+    requirements:
+        filename: .+

@@ -1,0 +1,9 @@
+    #[Route('/programmer/integration_environnement_propice', name: 'app_intrg_environnement')]
+    public function integration_environnement(): Response
+    {
+        return $this->render('portfolio/integration_environnement_propice.twig', [
+            'controller_name' => 'PortfolioController',
+        ]);
+    }
+
+Modifier le titre 
